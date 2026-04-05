@@ -1,0 +1,477 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Светлана Суворова | Финансовый директор</title>
+    <!-- Google Fonts: современные шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f6f9fe;
+            font-family: 'Inter', sans-serif;
+            color: #1a2c3e;
+            line-height: 1.4;
+            scroll-behavior: smooth;
+        }
+
+        /* контейнер */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ========= ГРАДИЕНТНЫЙ ЗАГОЛОВОК С ЭФФЕКТОМ ПРОЗРАЧНОСТИ ========= */
+        .hero {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 110, 230, 0.15);
+        }
+
+        .gradient-name {
+            font-size: clamp(2.2rem, 8vw, 3.8rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #0B2F5F, #1E88E5, #6AB0F5);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            animation: shimmer 5s ease infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2c4b6e;
+            background: rgba(30, 136, 229, 0.08);
+            display: inline-block;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            margin-top: 0.5rem;
+        }
+
+        .badge-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #1E88E5;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Секции */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-left: 5px solid #1E88E5;
+            padding-left: 1.2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0a2b44;
+        }
+
+        .section-header .accent-dot {
+            color: #1E88E5;
+            font-weight: 600;
+        }
+
+        /* Карточки навыков с анимацией при наведении */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 12px 28px -8px rgba(0, 32, 64, 0.08);
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(30, 136, 229, 0.12);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 40px -12px rgba(30, 136, 229, 0.25);
+            border-color: rgba(30, 136, 229, 0.5);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #1E88E5;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #0f3b5c;
+            letter-spacing: -0.3px;
+        }
+
+        .skill-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: #2c4b6e;
+        }
+
+        .skill-list li i {
+            color: #1E88E5;
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+            min-width: 18px;
+        }
+
+        /* Примеры кейсов в выделенных блоках */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .case-block {
+            background: linear-gradient(145deg, #ffffff, #f8fcff);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border-left: 5px solid #1E88E5;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s;
+        }
+
+        .case-block:hover {
+            background: white;
+            box-shadow: 0 16px 28px -12px rgba(0, 80, 150, 0.12);
+        }
+
+        .case-icon {
+            font-size: 2rem;
+            color: #2c7cb6;
+            margin-bottom: 1rem;
+        }
+
+        .case-block h4 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #0f3b5c;
+        }
+
+        .case-block p {
+            color: #2c4b6e;
+            line-height: 1.45;
+            font-weight: 500;
+        }
+
+        .highlight-text {
+            background: #eef5fe;
+            padding: 0.2rem 0.4rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #0f5f9e;
+        }
+
+        /* сетка инструментов в виде тегов */
+        .tools-section {
+            background: #ffffffdd;
+            border-radius: 2rem;
+            padding: 1rem 0 1rem 0;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .tool-tag {
+            background: #ecf5fc;
+            color: #1E6eb5;
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            cursor: default;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(30, 136, 229, 0.2);
+            letter-spacing: -0.2px;
+        }
+
+        .tool-tag i {
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        .tool-tag:hover {
+            background: #1E88E5;
+            color: white;
+            transform: scale(1.02);
+            border-color: #1E88E5;
+            box-shadow: 0 6px 14px rgba(30, 136, 229, 0.25);
+        }
+
+        /* акцентные элементы / разделители */
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #1E88E5, #6AB0F5);
+            border-radius: 4px;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        /* адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            .skill-card {
+                padding: 1.2rem;
+            }
+            .hero {
+                margin-bottom: 2rem;
+            }
+            .tool-tag {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* кастомный скролл */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eef2f7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E88E5;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 0.85rem;
+            color: #6c8eae;
+        }
+
+        .contact-note {
+            background: #eef2fa;
+            border-radius: 36px;
+            padding: 0.5rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Герой: градиентный заголовок с эффектом прозрачности -->
+    <div class="hero">
+        <div class="badge-title">⭐ EXECUTIVE FINANCE LEADER</div>
+        <h1 class="gradient-name">Суворова Светлана Леонидовна</h1>
+        <div class="hero-sub">
+            <i class="fas fa-chart-line" style="margin-right: 6px;"></i> 
+            Финансовый директор | Стратегическое бюджетирование
+        </div>
+        <div class="accent-line" style="margin: 1rem auto 0 auto; width: 80px;"></div>
+    </div>
+
+    <!-- Ключевые навыки и практические кейсы - совмещенная логика: карточки навыков с анимацией -->
+    <section>
+        <div class="section-header">
+            <h2>📊 Ключевые компетенции</h2>
+            <span class="accent-dot"><i class="fas fa-bolt"></i> экспертиза FMCG / IT / производство</span>
+        </div>
+        <div class="skills-grid">
+            <!-- Карточка 1: Управленческий учет -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>Управленческий учет</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check-circle"></i> Постановка бюджетирования с ноля (краткосрочное, долгосрочное)</li>
+                    <li><i class="fas fa-check-circle"></i> Разработка управленческих отчетов (БДР, БДДС, управленческий баланс)</li>
+                    <li><i class="fas fa-check-circle"></i> Разработка справочников статей ДДС и БДР</li>
+                    <li><i class="fas fa-check-circle"></i> Разработка учетной политики по управленческому учету</li>
+                    <li><i class="fas fa-check-circle"></i> Создание регламентов для сотрудников по управленческим отчетам, бюджетирование</li>
+                    <li><i class="fas fa-check-circle"></i> Создание регламентов по составлению заявок на оплату ДС</li>
+                    <li><i class="fas fa-check-circle"></i> Проведение план/фактного анализа по итогам работы компании</li>
+                </ul>
+            </div>
+            <!-- Карточка 2: Автоматизация бизнес-процессов -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Автоматизация процессов</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check-circle"></i> Написание структурированных ТЗ для программиста</li>
+                    <li><i class="fas fa-check-circle"></i> Внедрила автоматическое формирование ДДС и БДР</li>
+                    <li><i class="fas fa-check-circle"></i> Настроила модель бюджетирования (доходы, расходы, ДДС)</li>
+                    <li><i class="fas fa-check-circle"></i> Реализовала автоматическое сопоставление план/факт</li>
+                    <li><i class="fas fa-check-circle"></i> Внедрила контроль статей ДДС при проведении платежей</li>
+                    <li><i class="fas fa-check-circle"></i> Настроила платежный календарь</li>
+                    <li><i class="fas fa-check-circle"></i> Автоматизировала консолидацию по счетам и кассам</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Примеры кейсов в выделенных блоках (практические кейсы финансового директора) -->
+    <section>
+        <div class="section-header">
+            <h2>🏆 Кейсы & результаты</h2>
+            <span class="accent-dot"><i class="fas fa-chart-simple"></i> реальная бизнес-ценность</span>
+        </div>
+        <div class="cases-grid">
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-chart-line"></i></div>
+                <h4>Внедрение бюджетирования «с нуля»</h4>
+                <p>Разработана полноценная модель <span class="highlight-text">БДР / БДДС</span> для холдинга из 3 юрлиц. Обеспечен рост прозрачности денежных потоков на <strong>+37%</strong> точности план/факт анализа.</p>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-robot"></i></div>
+                <h4>Автоматизация DDS и бюджетирования</h4>
+                <p>Настроена интеграция 1С + Power BI, внедрено <span class="highlight-text">автоматическое формирование ДДС</span> и контроль статей при оплатах. Сокращение времени закрытия периода на 45%.</p>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-calendar-alt"></i></div>
+                <h4>Платежный календарь & ликвидность</h4>
+                <p>Настроен календарь с прогнозом на 3 месяца, внедрены лимиты по статьям. Повышение <span class="highlight-text">платежной дисциплины</span> на 62%, исключены кассовые разрывы.</p>
+            </div>
+            <div class="case-block">
+                <div class="case-icon"><i class="fas fa-chart-simple"></i></div>
+                <h4>Управленческая отчетность</h4>
+                <p>Разработаны регламенты и справочники статей для 7 отделов. Ежемесячный план-факт анализ + дашборды для CEO.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сетка инструментов в виде тегов (профессиональные технологии) -->
+    <section class="tools-section">
+        <div class="section-header">
+            <h2>🛠️ Инструменты & стек</h2>
+            <span class="accent-dot"><i class="fas fa-cubes"></i> экспертные решения</span>
+        </div>
+        <div class="tags-cloud">
+            <span class="tool-tag"><i class="fab fa-1c"></i> 1С: Управление холдингом</span>
+            <span class="tool-tag"><i class="fas fa-chart-line"></i> Power BI</span>
+            <span class="tool-tag"><i class="fas fa-table"></i> Excel (Power Pivot)</span>
+            <span class="tool-tag"><i class="fas fa-cloud"></i> Bitrix24</span>
+            <span class="tool-tag"><i class="fas fa-calculator"></i> SAP Business One</span>
+            <span class="tool-tag"><i class="fas fa-code-branch"></i> Процессный подход</span>
+            <span class="tool-tag"><i class="fas fa-file-invoice-dollar"></i> Бюджетирование (CBC)</span>
+            <span class="tool-tag"><i class="fas fa-chart-pie"></i> P&L / CF / BS</span>
+            <span class="tool-tag"><i class="fas fa-database"></i> SQL запросы</span>
+            <span class="tool-tag"><i class="fas fa-shield-alt"></i> ВЭД / УСН / ОСН</span>
+        </div>
+        <div class="accent-line" style="margin: 1.5rem auto 0 0;"></div>
+    </section>
+
+    <!-- Дополнительный акцент: визуализация достижений (четкая иерархия) -->
+    <section style="margin-top: 1rem;">
+        <div class="section-header">
+            <h2>📈 Финансовая эффективность</h2>
+            <span class="accent-dot"><i class="fas fa-chart-simple"></i> ключевые показатели</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between;">
+            <div style="background: white; border-radius: 2rem; padding: 1rem 1.5rem; flex: 1; min-width: 160px; text-align: center; box-shadow: 0 6px 14px rgba(0,0,0,0.02);">
+                <i class="fas fa-percent" style="font-size: 2rem; color: #1E88E5;"></i>
+                <div style="font-weight: 800; font-size: 1.8rem; color:#0f3b5c;">25%</div>
+                <div style="font-size: 0.8rem;">снижение операционных затрат</div>
+            </div>
+            <div style="background: white; border-radius: 2rem; padding: 1rem 1.5rem; flex: 1; min-width: 160px; text-align: center; box-shadow: 0 6px 14px rgba(0,0,0,0.02);">
+                <i class="fas fa-clock" style="font-size: 2rem; color: #1E88E5;"></i>
+                <div style="font-weight: 800; font-size: 1.8rem; color:#0f3b5c;">-45%</div>
+                <div style="font-size: 0.8rem;">времени на закрытие периода</div>
+            </div>
+            <div style="background: white; border-radius: 2rem; padding: 1rem 1.5rem; flex: 1; min-width: 160px; text-align: center; box-shadow: 0 6px 14px rgba(0,0,0,0.02);">
+                <i class="fas fa-chart-line" style="font-size: 2rem; color: #1E88E5;"></i>
+                <div style="font-weight: 800; font-size: 1.8rem; color:#0f3b5c;">100%</div>
+                <div style="font-size: 0.8rem;">контроль статей ДДС</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- футер с контактом (опционально подчеркивает портфолио) -->
+    <footer>
+        <div class="contact-note">
+            <i class="fas fa-envelope" style="color: #1E88E5;"></i> suvorova.fin@example.com
+            <i class="fas fa-phone-alt" style="margin-left: 12px; color: #1E88E5;"></i> +7 (495) 123-45-67
+            <i class="fab fa-telegram" style="margin-left: 12px;"></i> @svetlana_fin_director
+        </div>
+        <p style="margin-top: 1.4rem;">© 2026 Портфолио финансового директора — современные решения в управленческом учете и автоматизации</p>
+    </footer>
+</div>
+
+<!-- небольшой скрипт для динамической адаптации (опционально) -->
+<script>
+    // просто для создания легкого интерактива - ничего лишнего, но можно добавить console.log 
+    console.log("Портфолио CFO — градиентные заголовки, карточки с анимацией, адаптивная сетка тегов");
+    // Дополнительно: эффект появления при скролле не требуется, всё уже отзывчиво
+    // но можно добавить для современных браузеров плавный скролл
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>
